@@ -16,7 +16,7 @@ jobs:
       - name: Publish App
         run: dotnet publish -c Release "./Chapter 12/Chapter_12_GitHubActions_Examples/Chapter12.csproj"
       - name: Save Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name : pasm
           path : "./Chapter 12/Chapter_12_GitHubActions_Examples/bin/Release/net5.0/publish/wwwroot"
@@ -39,7 +39,7 @@ jobs:
             git commit --allow-empty -m “root commit”
             git push -f origin pages
       - name: Download build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
             name: myWASM
       - name: Commit changes
